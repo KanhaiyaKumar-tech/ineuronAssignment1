@@ -20,7 +20,16 @@ void moveZeroes(std::vector<int>& nums) {
 }
 
 int main() {
-    std::vector<int> nums = {0, 1, 0, 3, 12};
+    //std::vector<int> nums = {0, 1, 0, 3, 12};
+    std::vector<int> nums;
+    int num;
+    while (std::cin >> num) {
+        nums.push_back(num);
+        if (std::cin.peek() == '\n') {
+            break;
+        }
+    }
+
 
     moveZeroes(nums);
 

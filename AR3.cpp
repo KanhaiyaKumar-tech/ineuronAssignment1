@@ -21,12 +21,25 @@ int searchInsert(std::vector<int>& nums, int target) {
 }
 
 int main() {
-    std::vector<int> nums = {1, 3, 5, 6};
-    int target = 5;
+
+
+    std::vector<int> nums;
+    int num;
+    //std::cout << "Enter the numbers separated by spaces: ";
+    while (std::cin >> num) {
+        nums.push_back(num);
+        if (std::cin.peek() == '\n') {
+            break;
+        }
+    }
+
+    int target;
+    //std::cout << "Enter the target sum: ";
+    std::cin >> target;
 
     int index = searchInsert(nums, target);
 
-    std::cout << "Index: " << index << std::endl;
+    std::cout  << index << std::endl;
 
     return 0;
 }

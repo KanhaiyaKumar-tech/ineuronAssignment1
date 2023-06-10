@@ -27,10 +27,28 @@ void merge(std::vector<int>& nums1, int m, std::vector<int>& nums2, int n) {
 }
 
 int main() {
-    std::vector<int> nums1 = {1, 2, 3, 0, 0, 0};
-    int m = 3;
-    std::vector<int> nums2 = {2, 5, 6};
-    int n = 3;
+    //std::vector<int> nums1 = {1, 2, 3, 0, 0, 0};
+    std::vector<int> nums1;
+    int num;
+    while (std::cin >> num) {
+        nums1.push_back(num);
+        if (std::cin.peek() == '\n') {
+            break;
+        }
+    }
+    int m ;
+    std::cin>>m;
+
+    //std::vector<int> nums2 = {2, 5, 6};
+    std::vector<int> nums2;
+    while (std::cin >> num) {
+        nums2.push_back(num);
+        if (std::cin.peek() == '\n') {
+            break;
+        }
+    }
+    int n;
+    std::cin>>n;
 
     merge(nums1, m, nums2, n);
 

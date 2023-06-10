@@ -46,7 +46,15 @@ std::vector<int> findErrorNums(std::vector<int>& nums) {
 }
 
 int main() {
-    std::vector<int> nums = {1, 2, 2, 4};
+    //std::vector<int> nums = {1, 2, 2, 4};
+    std::vector<int> nums;
+    int num;
+    while (std::cin >> num) {
+        nums.push_back(num);
+        if (std::cin.peek() == '\n') {
+            break;
+        }
+    }
 
     std::vector<int> result = findErrorNums(nums);
 

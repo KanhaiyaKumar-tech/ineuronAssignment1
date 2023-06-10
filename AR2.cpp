@@ -2,33 +2,40 @@
 #include <vector>
 
 int removeElement(std::vector<int>& nums, int val) {
-    int i = 0;
-    int j = 0;
-
-    while (i < nums.size()) {
+    int k = 0; // Count of elements not equal to val
+    for (int i = 0; i < nums.size(); ++i) {
         if (nums[i] != val) {
-            nums[j] = nums[i];
-            ++j;
+            nums[k] = nums[i];
+            k++;
         }
-        ++i;
     }
-
-    return j;
+    return k;
 }
 
 int main() {
-    std::vector<int> nums = {3, 2, 2, 3};
-    int val = 3;
-
-    int count = removeElement(nums, val);
-
-    std::cout << "Count: " << count << std::endl;
-    std::cout << "nums: ";
-    for (int i = 0; i < count; ++i) {
-        std::cout << nums[i] << " ";
+    std::vector<int> nums;
+    int num;
+    //std::cout << "Enter the numbers separated by spaces: ";
+    while (std::cin >> num) {
+        nums.push_back(num);
+        if (std::cin.peek() == '\n') {
+            break;
+        }
     }
-    std::cout << std::endl;
+
+    int val;
+    //std::cout << "Enter the value to remove: ";
+    std::cin >> val;
+
+    int result = removeElement(nums, val);
+    std::cout << "Output: " << result << ", nums = [";
+    for (int i = 0; i < result; ++i) {
+        std::cout << nums[i];
+        if (i != result - 1) {
+            std::cout << ",";
+        }
+    }
+    std::cout << ",_*]" << std::endl;
 
     return 0;
 }
-

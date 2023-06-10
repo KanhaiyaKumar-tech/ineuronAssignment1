@@ -23,7 +23,18 @@ std::vector<int> plusOne(std::vector<int>& digits) {
 }
 
 int main() {
-    std::vector<int> digits = {1, 2, 3};
+    //std::vector<int> digits = {1, 2, 3};
+
+    std::vector<int> digits;
+    int digit;
+    //std::cout << "Enter the numbers separated by spaces: ";
+    while (std::cin >> digit) {
+        digits.push_back(digit);
+        if (std::cin.peek() == '\n') {
+            break;
+        }
+    }
+
 
     std::vector<int> result = plusOne(digits);
 
